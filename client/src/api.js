@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const fetchProductList = async () => {
+export const fetchProductList = async ({ pageParam = 1 }) => {
   const { data } = await axios.get(
-    `${import.meta.env.VITE_BASE_ENDPOINT}/product`
+    `${import.meta.env.VITE_BASE_ENDPOINT}/product?page=${pageParam}`
   );
 
   return data;

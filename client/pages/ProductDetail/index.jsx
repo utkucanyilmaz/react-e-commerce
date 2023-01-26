@@ -37,7 +37,7 @@ function ProductDetail() {
       <p>{data.description}</p>
 
       <Box margin="10">
-        {/* <ImageGallery items={images}></ImageGallery> */}
+        <ImageGallery items={images}></ImageGallery>
       </Box>
     </div>
   );

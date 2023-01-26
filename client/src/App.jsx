@@ -19,7 +19,6 @@ function App() {
             <Route path="/product/:product_id" element={<ProductDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            {console.log(import.meta.env.BASE_ENDPOINT)}
           </Routes>
         </div>
       </div>
