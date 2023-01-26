@@ -23,6 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ChakraProvider>
       <App />
     </ChakraProvider>
-    <ReactQueryDevtools initialIs Open={false} />
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

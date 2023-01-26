@@ -12,8 +12,6 @@ function Products() {
 
   if (error) return "An error has occured: " + error.message;
 
-  console.log(data);
-
   return (
     <div>
       <Grid templateColumns="repeat(3,1fr)">
