@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Products from "../pages/Products";
-import ProductDetail from "../pages/ProductDetail";
-import Register from "../pages/Auth/Register";
-import Login from "../pages/Auth/Login";
+import Navbar from "./components/Navbar";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Register from "./pages/Auth/Register";
+import Login from "./pages/Auth/Login";
+import Profile from "./pages/Profile";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/product/:product_id" element={<ProductDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>
