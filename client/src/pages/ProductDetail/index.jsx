@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../../api";
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import moment from "moment";
 import ImageGallery from "react-image-gallery";
 
@@ -19,15 +19,13 @@ function ProductDetail() {
   if (isError) {
     return <div>Error</div>;
   }
-  console.log(data);
+
   const images = data.photos.map(url => ({
     original: url,
   }));
 
   return (
-    <div>
-      <Button colorScheme="pink">Add to Cart</Button>
-
+    <Flex flexDirection="column" rowGap={4}>
       <Text as="h2" fontSize="2xl">
         {data.title}
       </Text>
@@ -39,7 +37,10 @@ function ProductDetail() {
       <Box margin="10">
         <ImageGallery items={images}></ImageGallery>
       </Box>
-    </div>
+      <Button alignSelf="center" w="300px" colorScheme="pink">
+        Add to Cart
+      </Button>
+    </Flex>
   );
 }
 

@@ -42,9 +42,29 @@ export const fetchRegister = async input => {
   return data;
 };
 
+export const fetchLogin = async input => {
+  const { data } = await axios.post(
+    `${import.meta.env.VITE_BASE_ENDPOINT}/auth/login`,
+    input
+  );
+
+  return data;
+};
+
 export const fetchMe = async () => {
   const { data } = await axios.get(
     `${import.meta.env.VITE_BASE_ENDPOINT}/auth/me`
+  );
+
+  return data;
+};
+
+export const fetchLogout = async () => {
+  const { data } = await axios.post(
+    `${import.meta.env.VITE_BASE_ENDPOINT}/auth/logout`,
+    {
+      refresh_token: localStorage.getItem("refresh-token"),
+    }
   );
 
   return data;

@@ -5,7 +5,6 @@ import {
   Heading,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Input,
   Button,
   Alert,
@@ -16,9 +15,13 @@ import { useFormik } from "formik";
 import validationSchema from "./validations";
 
 import { useAuth } from "../../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const { login } = useAuth();
+
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -33,6 +36,7 @@ function Register() {
           password: values.password,
         });
         login(registerResponse);
+        navigate("/profile");
       } catch (e) {
         bag.setErrors({ general: e.response.data.message });
       }

@@ -8,6 +8,7 @@ import Login from "./pages/Auth/Login";
 import Profile from "./pages/Profile";
 
 import "./App.css";
+import PrivateRoute from "./pages/PrivateRoutes";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
             <Route path="/product/:product_id" element={<ProductDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/profile" element={<Profile />} />
+            </Route>
           </Routes>
         </div>
       </div>

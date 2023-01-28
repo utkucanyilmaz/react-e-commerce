@@ -25,7 +25,7 @@ function Products() {
       return pages.length + 1;
     },
   });
-  console.log(data);
+
   if (status === "loading") return "Loading...";
 
   if (status === "error") return "An error has occured: " + error.message;
