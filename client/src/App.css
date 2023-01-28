@@ -1,3 +1,8 @@
 #content {
   padding: 15px;
 }
+
+.cart {
+  display: flex;
+  column-gap: 1rem;
+}

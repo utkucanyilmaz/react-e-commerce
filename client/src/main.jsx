@@ -6,6 +6,7 @@ import "./reset.css";
 
 // context
 import { AuthProvider } from "./context/AuthContext";
+import { CartContextProvider } from "./context/CartContext";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -25,7 +26,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
     <ChakraProvider>
       <AuthProvider>
-        <App />
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
       </AuthProvider>
     </ChakraProvider>
     <ReactQueryDevtools initialIsOpen={false} />

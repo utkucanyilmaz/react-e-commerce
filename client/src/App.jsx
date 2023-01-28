@@ -6,6 +6,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
 import Profile from "./pages/Profile";
+import Cart from "./pages/Cart";
+import Error from "./pages/Error";
 
 import "./App.css";
 import PrivateRoute from "./pages/PrivateRoutes";
@@ -23,7 +25,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route element={<PrivateRoute />}>
               <Route path="/profile" element={<Profile />} />
+              <Route path="/cart" element={<Cart />} />
             </Route>
+            <Route path="*" element={<Error />}></Route>
           </Routes>
         </div>
       </div>
