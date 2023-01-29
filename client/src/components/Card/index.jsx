@@ -4,9 +4,11 @@ import { Box, Image, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 
 function Card({ item }) {
   const { addToCart, items } = useCart();
+  const { isUserLoggedIn } = useAuth();
 
   const findCartItem = items.find(cartItem => cartItem._id === item._id);
   return (
@@ -26,7 +28,7 @@ function Card({ item }) {
         </Box>
       </Link>
       <Button
-        onClick={() => addToCart(item, findCartItem)}
+        onClick={() => isUserLoggedIn && addToCart(item, findCartItem)}
         variant="solid"
         colorScheme={findCartItem ? "pink" : "green"}
       >

@@ -69,3 +69,12 @@ export const fetchLogout = async () => {
 
   return data;
 };
+
+export const postOrder = async input => {
+  const { data } = await axios.post(
+    `${import.meta.env.VITE_BASE_ENDPOINT}/order`,
+    input
+  );
+
+  return data;
+};
