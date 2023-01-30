@@ -39,12 +39,10 @@ function Cart() {
     const res = await postOrder(input);
     emptyCart();
     onClose();
-    console.log(res);
   };
 
   const total = items.reduce((acc, obj) => acc + obj.price, 0);
 
-  console.log(total);
   return (
     <>
       <Box p={5}>

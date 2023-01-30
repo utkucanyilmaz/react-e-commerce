@@ -8,9 +8,15 @@ import Login from "./pages/Auth/Login";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
+import Admin from "./pages/Admin";
+import AdminHome from "./pages/Admin/AdminHome";
+import AdminProducts from "./pages/Admin/AdminProducts";
+import AdminOrders from "./pages/Admin/AdminOrders";
 
 import "./App.css";
-import PrivateRoute from "./pages/PrivateRoutes";
+
+import PrivateRoute from "./pages/PrivateRoute";
+import AdminRoute from "./pages/AdminRoute";
 
 function App() {
   return (
@@ -27,7 +33,15 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/cart" element={<Cart />} />
             </Route>
-            <Route path="*" element={<Error />}></Route>
+            <Route element={<AdminRoute />}>
+              <Route path="admin" element={<Admin />}>
+                <Route index element={<AdminHome />} />
+                <Route path="orders" element={<AdminOrders />} />
+                <Route path="products" element={<AdminProducts />} />
+                <Route path="*" element={<Error />} />
+              </Route>
+            </Route>
+            <Route path="*" element={<Error />} />
           </Routes>
         </div>
       </div>

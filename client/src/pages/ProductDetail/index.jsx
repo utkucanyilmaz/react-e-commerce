@@ -42,6 +42,7 @@ function ProductDetail() {
       <p>{data.description}</p>
       <Button
         w="300px"
+        alignSelf={"center"}
         colorScheme={findCartItem ? "pink" : "green"}
         onClick={() => addToCart(data, findCartItem)}
       >
