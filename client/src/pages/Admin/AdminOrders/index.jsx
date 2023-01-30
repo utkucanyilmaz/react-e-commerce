@@ -25,10 +25,12 @@ function AdminOrders() {
 
   return (
     <div>
-      <Heading>Orders</Heading>
+      <Heading p="4">Orders</Heading>
 
       <Table mt={10} variant="simple">
-        <TableCaption>User Orders</TableCaption>
+        <TableCaption>
+          Total {data.length} {`${data.length === 1 ? "order" : "orders"}`}
+        </TableCaption>
         <Thead>
           <Tr>
             <Th>User</Th>
