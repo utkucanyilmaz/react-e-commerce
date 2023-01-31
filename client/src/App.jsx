@@ -12,6 +12,7 @@ import Admin from "./pages/Admin";
 import AdminHome from "./pages/Admin/AdminHome";
 import AdminProducts from "./pages/Admin/AdminProducts";
 import AdminOrders from "./pages/Admin/AdminOrders";
+import AdminProductDetail from "./pages/Admin/AdminProductDetail";
 
 import "./App.css";
 
@@ -38,6 +39,10 @@ function App() {
                 <Route index element={<AdminHome />} />
                 <Route path="orders" element={<AdminOrders />} />
                 <Route path="products" element={<AdminProducts />} />
+                <Route
+                  path="products/:product_id"
+                  element={<AdminProductDetail />}
+                />
                 <Route path="*" element={<Error />} />
               </Route>
             </Route>
