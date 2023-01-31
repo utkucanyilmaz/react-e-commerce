@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { fetchProductList, deleteProduct } from "../../../api";
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Flex, Button } from "@chakra-ui/react";
 import { Table, Popconfirm } from "antd";
 import { Link } from "react-router-dom";
 
@@ -69,7 +69,12 @@ function AdminProducts() {
 
   return (
     <div>
-      <Heading p="4">Products</Heading>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Heading p="4">Products</Heading>
+        <Link to="new">
+          <Button>New</Button>
+        </Link>
+      </Flex>
 
       <Table dataSource={data} columns={columns} rowKey="_id"></Table>
     </div>

@@ -102,3 +102,10 @@ export const updateProduct = async (input, product_id) => {
 
   return data;
 };
+
+export const postProduct = async input => {
+  const { data } = await axios.post(
+    `${import.meta.env.VITE_BASE_ENDPOINT}/product`,
+    input
+  );
+};

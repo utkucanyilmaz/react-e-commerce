@@ -13,6 +13,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 import AdminProducts from "./pages/Admin/AdminProducts";
 import AdminOrders from "./pages/Admin/AdminOrders";
 import AdminProductDetail from "./pages/Admin/AdminProductDetail";
+import NewProduct from "./pages/Admin/AdminProducts/NewProduct";
 
 import "./App.css";
 
@@ -34,18 +35,21 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/cart" element={<Cart />} />
             </Route>
+
             <Route element={<AdminRoute />}>
               <Route path="admin" element={<Admin />}>
                 <Route index element={<AdminHome />} />
                 <Route path="orders" element={<AdminOrders />} />
                 <Route path="products" element={<AdminProducts />} />
+                <Route path="products/new" element={<NewProduct />} />
                 <Route
                   path="products/:product_id"
                   element={<AdminProductDetail />}
                 />
-                <Route path="*" element={<Error />} />
               </Route>
+              <Route path="*" element={<Error />} />
             </Route>
+
             <Route path="*" element={<Error />} />
           </Routes>
         </div>
